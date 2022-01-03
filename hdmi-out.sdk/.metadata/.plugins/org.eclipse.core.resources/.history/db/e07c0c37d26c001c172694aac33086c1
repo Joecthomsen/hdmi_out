@@ -216,11 +216,6 @@ void DemoRun()
 		case '7':
 			DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
 			break;
-
-		case '8' :
-			drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
-			break;
-
 		case 'q':
 			break;
 		default :
@@ -251,7 +246,6 @@ void DemoPrintMenu()
 	xil_printf("5 - Invert Current Frame colors\n\r");
 	xil_printf("6 - Invert Current Frame colors seamlessly\n\r");
 	xil_printf("7 - GOAT test\n\r");
-	xil_printf("8 - GOAT square\n\r");
 	xil_printf("q - Quit\n\r");
 	xil_printf("\n\r");
 	xil_printf("\n\r");
@@ -381,7 +375,7 @@ void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
 	fBlue = 0;
 	fGreen = 0;
 
-	enum state {RED_UP , RED_DOWN, BLUE_UP , BLUE_DOWN, GREEN_UP , GREEN_DOWN};
+	enum state {RED_UP , RED_DOWN, BLUE_UP , BLUE_DOWN};
 	int state = RED_UP;
 
 	u8 wRed = (fRed >= 256.0) ? 255 : ((u8) fRed);
@@ -439,28 +433,9 @@ void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
 		wBlue--;
 			if(wBlue == 0)
 			{
-				state = GREEN_UP;
+				state = RED_UP;
 			}
 	}
-
-	else if(state == GREEN_UP)
-		{
-			wGreen++;
-			if(wGreen > 254)
-			{
-				state = GREEN_DOWN;
-			}
-		}
-
-		else if(state == GREEN_DOWN)
-		{
-
-			wGreen--;
-				if(wGreen == 0)
-				{
-					state = RED_UP;
-				}
-		}
 	}
 }
 
@@ -630,30 +605,6 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 	default :
 		xil_printf("Error: invalid pattern passed to DemoPrintTest");
 	}
-}
-
-void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
-
-	//u32 iPixelAddr = (width * 2)/1.5 *height * 2; //start address
-	u32 iPixelAddr = 0;
-		u8 Red, Blue, Green;
-
-		Red = 254;
-		Blue = 0;
-		Green = 0;
-
-		for(int j = 0 ; j < 12 ; j++)
-		{
-			for(int i = 0 ; i < width ; i+=4)
-			{
-				frame[i] = Blue;
-				frame[i + 1] = Green;
-				frame[i + 2] = Red;
-				//iPixelAddr += 4;
-			}
-			iPixelAddr += stride;
-		}
-
 }
 
 

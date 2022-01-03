@@ -3298,3 +3298,343 @@ con
 ----------------End of Script----------------
 
 21:06:34 INFO  : Disconnected from the channel tcfchan#48.
+21:17:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:18:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:18:01 INFO  : FPGA configured successfully with bitstream "C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/hdmi_out_wrapper.bit"
+21:18:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:18:07 INFO  : 'fpga -state' command is executed.
+21:18:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:18:07 INFO  : Jtag cable 'Digilent Zybo 210279575123A' is selected.
+21:18:07 INFO  : 'jtag frequency' command is executed.
+21:18:07 INFO  : Sourcing of 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:18:07 INFO  : Context for 'APU' is selected.
+21:18:07 INFO  : Hardware design information is loaded from 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf'.
+21:18:07 INFO  : 'configparams force-mem-access 1' command is executed.
+21:18:08 INFO  : Context for 'APU' is selected.
+21:18:08 INFO  : 'stop' command is executed.
+21:18:08 INFO  : 'ps7_init' command is executed.
+21:18:08 INFO  : 'ps7_post_config' command is executed.
+21:18:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:18:08 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:18:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:18:09 INFO  : The application 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:18:09 INFO  : 'configparams force-mem-access 0' command is executed.
+21:18:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+loadhw -hw C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+dow C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:18:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:18:09 INFO  : 'con' command is executed.
+21:18:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+con
+----------------End of Script----------------
+
+21:18:09 INFO  : Disconnected from the channel tcfchan#49.
+21:32:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:32:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:32:27 INFO  : FPGA configured successfully with bitstream "C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/hdmi_out_wrapper.bit"
+21:32:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:32:35 INFO  : 'fpga -state' command is executed.
+21:32:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:32:35 INFO  : Jtag cable 'Digilent Zybo 210279575123A' is selected.
+21:32:35 INFO  : 'jtag frequency' command is executed.
+21:32:35 INFO  : Sourcing of 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:32:38 ERROR : no targets found with "name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"". available targets:
+  1  DAP (AHB AP transaction error, DAP status 30000021)
+  2* xc7z010
+21:32:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+----------------End of Script----------------
+
+21:33:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:33:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:33:43 INFO  : FPGA configured successfully with bitstream "C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/hdmi_out_wrapper.bit"
+21:33:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:33:52 INFO  : 'fpga -state' command is executed.
+21:33:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:33:52 INFO  : Jtag cable 'Digilent Zybo 210279575123A' is selected.
+21:33:52 INFO  : 'jtag frequency' command is executed.
+21:33:52 INFO  : Sourcing of 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:33:52 INFO  : Context for 'APU' is selected.
+21:33:52 INFO  : Hardware design information is loaded from 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf'.
+21:33:52 INFO  : 'configparams force-mem-access 1' command is executed.
+21:33:52 INFO  : Context for 'APU' is selected.
+21:33:52 INFO  : 'stop' command is executed.
+21:33:52 INFO  : 'ps7_init' command is executed.
+21:33:52 INFO  : 'ps7_post_config' command is executed.
+21:33:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:33:52 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:33:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:33:53 INFO  : The application 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:33:53 INFO  : 'configparams force-mem-access 0' command is executed.
+21:33:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+loadhw -hw C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+dow C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:33:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:33:53 INFO  : 'con' command is executed.
+21:33:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+con
+----------------End of Script----------------
+
+21:33:53 INFO  : Disconnected from the channel tcfchan#50.
+21:35:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:35:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:35:40 INFO  : FPGA configured successfully with bitstream "C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/hdmi_out_wrapper.bit"
+21:35:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:35:46 INFO  : 'fpga -state' command is executed.
+21:35:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:35:46 INFO  : Jtag cable 'Digilent Zybo 210279575123A' is selected.
+21:35:46 INFO  : 'jtag frequency' command is executed.
+21:35:46 INFO  : Sourcing of 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:35:46 INFO  : Context for 'APU' is selected.
+21:35:46 INFO  : Hardware design information is loaded from 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf'.
+21:35:46 INFO  : 'configparams force-mem-access 1' command is executed.
+21:35:46 INFO  : Context for 'APU' is selected.
+21:35:46 INFO  : 'stop' command is executed.
+21:35:47 INFO  : 'ps7_init' command is executed.
+21:35:47 INFO  : 'ps7_post_config' command is executed.
+21:35:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:35:47 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:35:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:35:47 INFO  : The application 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:35:47 INFO  : 'configparams force-mem-access 0' command is executed.
+21:35:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+loadhw -hw C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+dow C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:35:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:35:47 INFO  : 'con' command is executed.
+21:35:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+con
+----------------End of Script----------------
+
+21:35:47 INFO  : Disconnected from the channel tcfchan#51.
+21:36:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:36:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:36:50 INFO  : FPGA configured successfully with bitstream "C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/hdmi_out_wrapper.bit"
+21:37:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:37:08 INFO  : 'fpga -state' command is executed.
+21:37:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:37:08 INFO  : Jtag cable 'Digilent Zybo 210279575123A' is selected.
+21:37:08 INFO  : 'jtag frequency' command is executed.
+21:37:08 INFO  : Sourcing of 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:37:08 INFO  : Context for 'APU' is selected.
+21:37:08 INFO  : Hardware design information is loaded from 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf'.
+21:37:08 INFO  : 'configparams force-mem-access 1' command is executed.
+21:37:08 INFO  : Context for 'APU' is selected.
+21:37:08 INFO  : 'stop' command is executed.
+21:37:08 INFO  : 'ps7_init' command is executed.
+21:37:08 INFO  : 'ps7_post_config' command is executed.
+21:37:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:37:09 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:37:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:37:09 INFO  : The application 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:37:09 INFO  : 'configparams force-mem-access 0' command is executed.
+21:37:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+loadhw -hw C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+dow C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:37:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:37:09 INFO  : 'con' command is executed.
+21:37:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+con
+----------------End of Script----------------
+
+21:37:09 INFO  : Disconnected from the channel tcfchan#52.
+21:38:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:38:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:38:41 INFO  : FPGA configured successfully with bitstream "C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/hdmi_out_wrapper.bit"
+21:38:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:38:47 INFO  : 'fpga -state' command is executed.
+21:38:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:38:47 INFO  : Jtag cable 'Digilent Zybo 210279575123A' is selected.
+21:38:47 INFO  : 'jtag frequency' command is executed.
+21:38:47 INFO  : Sourcing of 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:38:47 INFO  : Context for 'APU' is selected.
+21:38:47 INFO  : Hardware design information is loaded from 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf'.
+21:38:47 INFO  : 'configparams force-mem-access 1' command is executed.
+21:38:47 INFO  : Context for 'APU' is selected.
+21:38:47 INFO  : 'stop' command is executed.
+21:38:48 INFO  : 'ps7_init' command is executed.
+21:38:48 INFO  : 'ps7_post_config' command is executed.
+21:38:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:38:48 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:38:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:38:48 INFO  : The application 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:38:48 INFO  : 'configparams force-mem-access 0' command is executed.
+21:38:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+loadhw -hw C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+dow C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:38:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:38:48 INFO  : 'con' command is executed.
+21:38:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+con
+----------------End of Script----------------
+
+21:38:48 INFO  : Disconnected from the channel tcfchan#53.
+21:40:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:40:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:40:49 INFO  : FPGA configured successfully with bitstream "C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/hdmi_out_wrapper.bit"
+21:40:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:40:56 INFO  : 'fpga -state' command is executed.
+21:40:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:40:56 INFO  : Jtag cable 'Digilent Zybo 210279575123A' is selected.
+21:40:56 INFO  : 'jtag frequency' command is executed.
+21:40:56 INFO  : Sourcing of 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:40:56 INFO  : Context for 'APU' is selected.
+21:40:56 INFO  : Hardware design information is loaded from 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf'.
+21:40:56 INFO  : 'configparams force-mem-access 1' command is executed.
+21:40:56 INFO  : Context for 'APU' is selected.
+21:40:56 INFO  : 'stop' command is executed.
+21:40:57 INFO  : 'ps7_init' command is executed.
+21:40:57 INFO  : 'ps7_post_config' command is executed.
+21:40:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:57 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:40:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:57 INFO  : The application 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:40:57 INFO  : 'configparams force-mem-access 0' command is executed.
+21:40:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+loadhw -hw C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+dow C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:40:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:57 INFO  : 'con' command is executed.
+21:40:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+con
+----------------End of Script----------------
+
+21:40:57 INFO  : Disconnected from the channel tcfchan#54.
+21:42:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:42:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:42:48 INFO  : FPGA configured successfully with bitstream "C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/hdmi_out_wrapper.bit"
+21:43:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279575123A" && level==0} -index 1' command is executed.
+21:43:02 INFO  : 'fpga -state' command is executed.
+21:43:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:43:02 INFO  : Jtag cable 'Digilent Zybo 210279575123A' is selected.
+21:43:02 INFO  : 'jtag frequency' command is executed.
+21:43:02 INFO  : Sourcing of 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:43:03 INFO  : Context for 'APU' is selected.
+21:43:03 INFO  : Hardware design information is loaded from 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf'.
+21:43:03 INFO  : 'configparams force-mem-access 1' command is executed.
+21:43:03 INFO  : Context for 'APU' is selected.
+21:43:03 INFO  : 'stop' command is executed.
+21:43:03 INFO  : 'ps7_init' command is executed.
+21:43:03 INFO  : 'ps7_post_config' command is executed.
+21:43:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:43:03 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:43:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:43:04 INFO  : The application 'C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:43:04 INFO  : 'configparams force-mem-access 0' command is executed.
+21:43:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+loadhw -hw C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+dow C:/Git/hdmi-out/hdmi-out.sdk/hdmi_out_1/Debug/hdmi_out_1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:43:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:43:04 INFO  : 'con' command is executed.
+21:43:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279575123A"} -index 0
+con
+----------------End of Script----------------
+
+21:43:04 INFO  : Disconnected from the channel tcfchan#55.

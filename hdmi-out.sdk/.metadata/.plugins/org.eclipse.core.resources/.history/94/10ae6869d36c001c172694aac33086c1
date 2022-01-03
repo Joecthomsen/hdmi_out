@@ -216,11 +216,6 @@ void DemoRun()
 		case '7':
 			DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
 			break;
-
-		case '8' :
-			drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
-			break;
-
 		case 'q':
 			break;
 		default :
@@ -251,7 +246,6 @@ void DemoPrintMenu()
 	xil_printf("5 - Invert Current Frame colors\n\r");
 	xil_printf("6 - Invert Current Frame colors seamlessly\n\r");
 	xil_printf("7 - GOAT test\n\r");
-	xil_printf("8 - GOAT square\n\r");
 	xil_printf("q - Quit\n\r");
 	xil_printf("\n\r");
 	xil_printf("\n\r");
@@ -634,25 +628,20 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 
 void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
 
-	//u32 iPixelAddr = (width * 2)/1.5 *height * 2; //start address
-	u32 iPixelAddr = 0;
-		u8 Red, Blue, Green;
+	u32 iPixelAddr = (width * 2)/1.5; //start address
 
-		Red = 254;
+		double Red, Blue, Green;
+
+		Red = 0;
 		Blue = 0;
 		Green = 0;
 
-		for(int j = 0 ; j < 12 ; j++)
-		{
-			for(int i = 0 ; i < width ; i+=4)
-			{
-				frame[i] = Blue;
-				frame[i + 1] = Green;
-				frame[i + 2] = Red;
-				//iPixelAddr += 4;
-			}
-			iPixelAddr += stride;
-		}
+
+
+		frame[i] = Blue;
+		frame[i + 1] = Green;
+		frame[i + 2] = Red;
+
 
 }
 

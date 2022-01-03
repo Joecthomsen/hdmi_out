@@ -636,7 +636,7 @@ void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
 
 	//u32 iPixelAddr = (width * 2)/1.5 *height * 2; //start address
 	u32 iPixelAddr = 0;
-		u8 Red, Blue, Green;
+		int Red, Blue, Green;
 
 		Red = 254;
 		Blue = 0;
@@ -644,12 +644,12 @@ void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
 
 		for(int j = 0 ; j < 12 ; j++)
 		{
-			for(int i = 0 ; i < width ; i+=4)
+			for(int i = 0 ; i < width ; i++)
 			{
-				frame[i] = Blue;
-				frame[i + 1] = Green;
-				frame[i + 2] = Red;
-				//iPixelAddr += 4;
+				frame[iPixelAddr] = Blue;
+				frame[iPixelAddr + 1] = Green;
+				frame[iPixelAddr + 2] = Red;
+				iPixelAddr += 4;
 			}
 			iPixelAddr += stride;
 		}
