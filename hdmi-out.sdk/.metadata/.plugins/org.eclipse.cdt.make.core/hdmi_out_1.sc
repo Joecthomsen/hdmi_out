@@ -2,6 +2,7 @@
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="xilinx.gnu.armv7.exe.debug.795914843;xilinx.gnu.armv7.exe.debug.795914843.">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="#undef __ARM_FEATURE_IDIV" removed="true"/>
 <includePath path="#undef __ARM_NEON" removed="true"/>
 <includePath path="#undef __ARM_NEON_FP" removed="true"/>
 <includePath path="#undef __thumb__" removed="true"/>
@@ -24,6 +25,7 @@
 <includePath path="#undef __ARM_FEATURE_CRYPTO" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_DSP" removed="true"/>
 <includePath path="c:\xilinx\sdk\2018.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../arm-none-eabi/libc/usr/include"/>
+<includePath path="#undef __ARM_ARCH_EXT_IDIV__" removed="true"/>
 <includePath path="#undef __ARM_FP" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_FMA" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_CLZ" removed="true"/>

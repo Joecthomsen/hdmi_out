@@ -1,14 +1,14 @@
-21:35:27 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+13:25:29 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 make: Ingenting at gøre for 'main-build'.
-21:35:45 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+13:25:43 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 make: Ingenting at gøre for 'main-build'.
-21:36:37 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+13:26:05 **** Auto Build of configuration Debug for project hdmi_out_1 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -23,24 +23,38 @@ arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -m
 ../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
     drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
     ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
 ../src/display_demo.c: At top level:
-../src/display_demo.c:374:6: warning: conflicting types for 'DemoGoatTest'
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
  void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
       ^~~~~~~~~~~~
 ../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
     DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
     ^~~~~~~~~~~~
-../src/display_demo.c: In function 'DemoGoatTest':
-../src/display_demo.c:376:6: warning: unused variable 'iPixelAddr' [-Wunused-variable]
-  u32 iPixelAddr = 0; //start address
-      ^~~~~~~~~~
-../src/display_demo.c: At top level:
-../src/display_demo.c:635:6: warning: conflicting types for 'drawSquare'
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
  void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
       ^~~~~~~~~~
 ../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
     drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
     ^~~~~~~~~~
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:682:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:672:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:668:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
 'Finished building: ../src/display_demo.c'
 ' '
 'Building target: hdmi_out_1.elf'
@@ -51,15 +65,15 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 106912	   2720	24909440	25019072	17dc2c0	hdmi_out_1.elf
+ 108856	   2720	24909440	25021016	17dca58	hdmi_out_1.elf
 'Finished building: hdmi_out_1.elf.size'
 ' '
-21:37:07 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+13:26:21 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 make: Ingenting at gøre for 'main-build'.
-21:38:29 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+13:29:42 **** Auto Build of configuration Debug for project hdmi_out_1 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -74,43 +88,51 @@ arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -m
 ../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
     drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
     ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
 ../src/display_demo.c: At top level:
-../src/display_demo.c:374:6: warning: conflicting types for 'DemoGoatTest'
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
  void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
       ^~~~~~~~~~~~
 ../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
     DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
     ^~~~~~~~~~~~
-../src/display_demo.c: In function 'DemoGoatTest':
-../src/display_demo.c:376:6: warning: unused variable 'iPixelAddr' [-Wunused-variable]
-  u32 iPixelAddr = 0; //start address
-      ^~~~~~~~~~
-../src/display_demo.c: At top level:
-../src/display_demo.c:635:6: warning: conflicting types for 'drawSquare'
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
  void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
       ^~~~~~~~~~
 ../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
     drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
     ^~~~~~~~~~
-'Finished building: ../src/display_demo.c'
-' '
-'Building target: hdmi_out_1.elf'
-'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../hdmi_out_1_bsp/ps7_cortexa9_0/lib -o "hdmi_out_1.elf"  ./src/timer_ps/timer_ps.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/display_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: hdmi_out_1.elf'
-' '
-'Invoking: ARM v7 Print Size'
-arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 106912	   2720	24909440	25019072	17dc2c0	hdmi_out_1.elf
-'Finished building: hdmi_out_1.elf.size'
-' '
-21:38:46 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-make: Ingenting at gøre for 'main-build'.
-21:40:36 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:667:2: error: 'speed' undeclared (first use in this function); did you mean 'sleep'?
+  speed = 16;
+  ^~~~~
+  sleep
+../src/display_demo.c:667:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/display_demo.c:787:4: error: duplicate case value
+    case 'a' :
+    ^~~~
+../src/display_demo.c:713:4: note: previously used here
+    case 'a' :
+    ^~~~
+../src/display_demo.c:684:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:674:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:670:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
+make: *** [src/display_demo.o] Fejl 1
+13:29:54 **** Auto Build of configuration Debug for project hdmi_out_1 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -125,43 +147,46 @@ arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -m
 ../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
     drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
     ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
 ../src/display_demo.c: At top level:
-../src/display_demo.c:374:6: warning: conflicting types for 'DemoGoatTest'
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
  void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
       ^~~~~~~~~~~~
 ../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
     DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
     ^~~~~~~~~~~~
-../src/display_demo.c: In function 'DemoGoatTest':
-../src/display_demo.c:376:6: warning: unused variable 'iPixelAddr' [-Wunused-variable]
-  u32 iPixelAddr = 0; //start address
-      ^~~~~~~~~~
-../src/display_demo.c: At top level:
-../src/display_demo.c:635:6: warning: conflicting types for 'drawSquare'
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
  void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
       ^~~~~~~~~~
 ../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
     drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
     ^~~~~~~~~~
-'Finished building: ../src/display_demo.c'
-' '
-'Building target: hdmi_out_1.elf'
-'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../hdmi_out_1_bsp/ps7_cortexa9_0/lib -o "hdmi_out_1.elf"  ./src/timer_ps/timer_ps.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/display_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: hdmi_out_1.elf'
-' '
-'Invoking: ARM v7 Print Size'
-arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 106912	   2720	24909440	25019072	17dc2c0	hdmi_out_1.elf
-'Finished building: hdmi_out_1.elf.size'
-' '
-21:40:55 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-make: Ingenting at gøre for 'main-build'.
-21:42:32 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:787:4: error: duplicate case value
+    case 'a' :
+    ^~~~
+../src/display_demo.c:713:4: note: previously used here
+    case 'a' :
+    ^~~~
+../src/display_demo.c:684:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:674:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:670:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
+make: *** [src/display_demo.o] Fejl 1
+13:30:17 **** Auto Build of configuration Debug for project hdmi_out_1 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -176,24 +201,38 @@ arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -m
 ../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
     drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
     ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
 ../src/display_demo.c: At top level:
-../src/display_demo.c:374:6: warning: conflicting types for 'DemoGoatTest'
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
  void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
       ^~~~~~~~~~~~
 ../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
     DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
     ^~~~~~~~~~~~
-../src/display_demo.c: In function 'DemoGoatTest':
-../src/display_demo.c:376:6: warning: unused variable 'iPixelAddr' [-Wunused-variable]
-  u32 iPixelAddr = 0; //start address
-      ^~~~~~~~~~
-../src/display_demo.c: At top level:
-../src/display_demo.c:635:6: warning: conflicting types for 'drawSquare'
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
  void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
       ^~~~~~~~~~
 ../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
     drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
     ^~~~~~~~~~
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:684:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:674:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:670:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
 'Finished building: ../src/display_demo.c'
 ' '
 'Building target: hdmi_out_1.elf'
@@ -204,10 +243,600 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 106912	   2720	24909440	25019072	17dc2c0	hdmi_out_1.elf
+ 109368	   2720	24909440	25021528	17dcc58	hdmi_out_1.elf
 'Finished building: hdmi_out_1.elf.size'
 ' '
-21:43:02 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+13:30:34 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:31:12 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:35:31 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/display_demo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../hdmi_out_1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/display_demo.d" -MT"src/display_demo.o" -o "src/display_demo.o" "../src/display_demo.c"
+../src/display_demo.c: In function 'DemoRun':
+../src/display_demo.c:217:4: warning: implicit declaration of function 'DemoGoatTest'; did you mean 'DemoPrintTest'? [-Wimplicit-function-declaration]
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+    DemoPrintTest
+../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: At top level:
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
+ void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~~~
+../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
+ void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:684:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:674:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:670:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
+'Finished building: ../src/display_demo.c'
+' '
+'Building target: hdmi_out_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../hdmi_out_1_bsp/ps7_cortexa9_0/lib -o "hdmi_out_1.elf"  ./src/timer_ps/timer_ps.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/display_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hdmi_out_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109880	   2720	24909440	25022040	17dce58	hdmi_out_1.elf
+'Finished building: hdmi_out_1.elf.size'
+' '
+13:35:46 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:41:24 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/display_demo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../hdmi_out_1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/display_demo.d" -MT"src/display_demo.o" -o "src/display_demo.o" "../src/display_demo.c"
+../src/display_demo.c: In function 'DemoRun':
+../src/display_demo.c:217:4: warning: implicit declaration of function 'DemoGoatTest'; did you mean 'DemoPrintTest'? [-Wimplicit-function-declaration]
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+    DemoPrintTest
+../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: At top level:
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
+ void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~~~
+../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
+ void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:684:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:674:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:670:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
+'Finished building: ../src/display_demo.c'
+' '
+'Building target: hdmi_out_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../hdmi_out_1_bsp/ps7_cortexa9_0/lib -o "hdmi_out_1.elf"  ./src/timer_ps/timer_ps.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/display_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hdmi_out_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109880	   2720	24909440	25022040	17dce58	hdmi_out_1.elf
+'Finished building: hdmi_out_1.elf.size'
+' '
+13:41:39 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:42:34 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/display_demo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../hdmi_out_1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/display_demo.d" -MT"src/display_demo.o" -o "src/display_demo.o" "../src/display_demo.c"
+../src/display_demo.c: In function 'DemoRun':
+../src/display_demo.c:217:4: warning: implicit declaration of function 'DemoGoatTest'; did you mean 'DemoPrintTest'? [-Wimplicit-function-declaration]
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+    DemoPrintTest
+../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: At top level:
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
+ void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~~~
+../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
+ void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:684:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:674:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:670:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
+'Finished building: ../src/display_demo.c'
+' '
+'Building target: hdmi_out_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../hdmi_out_1_bsp/ps7_cortexa9_0/lib -o "hdmi_out_1.elf"  ./src/timer_ps/timer_ps.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/display_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hdmi_out_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109880	   2720	24909440	25022040	17dce58	hdmi_out_1.elf
+'Finished building: hdmi_out_1.elf.size'
+' '
+13:42:49 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:44:22 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/display_demo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../hdmi_out_1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/display_demo.d" -MT"src/display_demo.o" -o "src/display_demo.o" "../src/display_demo.c"
+../src/display_demo.c: In function 'DemoRun':
+../src/display_demo.c:217:4: warning: implicit declaration of function 'DemoGoatTest'; did you mean 'DemoPrintTest'? [-Wimplicit-function-declaration]
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+    DemoPrintTest
+../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: At top level:
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
+ void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~~~
+../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
+ void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:684:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:674:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:670:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
+'Finished building: ../src/display_demo.c'
+' '
+'Building target: hdmi_out_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../hdmi_out_1_bsp/ps7_cortexa9_0/lib -o "hdmi_out_1.elf"  ./src/timer_ps/timer_ps.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/display_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hdmi_out_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109944	   2720	24909440	25022104	17dce98	hdmi_out_1.elf
+'Finished building: hdmi_out_1.elf.size'
+' '
+13:44:51 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:45:12 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/display_demo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../hdmi_out_1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/display_demo.d" -MT"src/display_demo.o" -o "src/display_demo.o" "../src/display_demo.c"
+../src/display_demo.c: In function 'DemoRun':
+../src/display_demo.c:217:4: warning: implicit declaration of function 'DemoGoatTest'; did you mean 'DemoPrintTest'? [-Wimplicit-function-declaration]
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+    DemoPrintTest
+../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: At top level:
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
+ void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~~~
+../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
+ void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:684:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:674:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:670:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
+'Finished building: ../src/display_demo.c'
+' '
+'Building target: hdmi_out_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../hdmi_out_1_bsp/ps7_cortexa9_0/lib -o "hdmi_out_1.elf"  ./src/timer_ps/timer_ps.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/display_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hdmi_out_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109880	   2720	24909440	25022040	17dce58	hdmi_out_1.elf
+'Finished building: hdmi_out_1.elf.size'
+' '
+13:45:26 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:45:45 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:53:21 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/display_demo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../hdmi_out_1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/display_demo.d" -MT"src/display_demo.o" -o "src/display_demo.o" "../src/display_demo.c"
+../src/display_demo.c: In function 'DemoRun':
+../src/display_demo.c:217:4: warning: implicit declaration of function 'DemoGoatTest'; did you mean 'DemoPrintTest'? [-Wimplicit-function-declaration]
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+    DemoPrintTest
+../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: At top level:
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
+ void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~~~
+../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
+ void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:684:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:674:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:670:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
+'Finished building: ../src/display_demo.c'
+' '
+'Building target: hdmi_out_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../hdmi_out_1_bsp/ps7_cortexa9_0/lib -o "hdmi_out_1.elf"  ./src/timer_ps/timer_ps.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/display_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hdmi_out_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109880	   2720	24909440	25022040	17dce58	hdmi_out_1.elf
+'Finished building: hdmi_out_1.elf.size'
+' '
+13:53:57 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/display_demo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../hdmi_out_1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/display_demo.d" -MT"src/display_demo.o" -o "src/display_demo.o" "../src/display_demo.c"
+../src/display_demo.c: In function 'DemoRun':
+../src/display_demo.c:217:4: warning: implicit declaration of function 'DemoGoatTest'; did you mean 'DemoPrintTest'? [-Wimplicit-function-declaration]
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+    DemoPrintTest
+../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: At top level:
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
+ void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~~~
+../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
+ void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:684:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:674:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:670:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
+'Finished building: ../src/display_demo.c'
+' '
+'Building target: hdmi_out_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../hdmi_out_1_bsp/ps7_cortexa9_0/lib -o "hdmi_out_1.elf"  ./src/timer_ps/timer_ps.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/display_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hdmi_out_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109880	   2720	24909440	25022040	17dce58	hdmi_out_1.elf
+'Finished building: hdmi_out_1.elf.size'
+' '
+13:54:15 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:54:52 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/display_demo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../hdmi_out_1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/display_demo.d" -MT"src/display_demo.o" -o "src/display_demo.o" "../src/display_demo.c"
+../src/display_demo.c: In function 'DemoRun':
+../src/display_demo.c:217:4: warning: implicit declaration of function 'DemoGoatTest'; did you mean 'DemoPrintTest'? [-Wimplicit-function-declaration]
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+    DemoPrintTest
+../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: At top level:
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
+ void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~~~
+../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
+ void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:684:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:674:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:670:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
+'Finished building: ../src/display_demo.c'
+' '
+'Building target: hdmi_out_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../hdmi_out_1_bsp/ps7_cortexa9_0/lib -o "hdmi_out_1.elf"  ./src/timer_ps/timer_ps.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/display_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hdmi_out_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109880	   2720	24909440	25022040	17dce58	hdmi_out_1.elf
+'Finished building: hdmi_out_1.elf.size'
+' '
+13:55:09 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:56:57 **** Auto Build of configuration Debug for project hdmi_out_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/display_demo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../hdmi_out_1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/display_demo.d" -MT"src/display_demo.o" -o "src/display_demo.o" "../src/display_demo.c"
+../src/display_demo.c: In function 'DemoRun':
+../src/display_demo.c:217:4: warning: implicit declaration of function 'DemoGoatTest'; did you mean 'DemoPrintTest'? [-Wimplicit-function-declaration]
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+    DemoPrintTest
+../src/display_demo.c:221:4: warning: implicit declaration of function 'drawSquare' [-Wimplicit-function-declaration]
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:226:4: warning: implicit declaration of function 'moveSquare' [-Wimplicit-function-declaration]
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: At top level:
+../src/display_demo.c:380:6: warning: conflicting types for 'DemoGoatTest'
+ void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~~~
+../src/display_demo.c:217:4: note: previous implicit declaration of 'DemoGoatTest' was here
+    DemoGoatTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~~~
+../src/display_demo.c:637:6: warning: conflicting types for 'drawSquare'
+ void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:221:4: note: previous implicit declaration of 'drawSquare' was here
+    drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c:665:6: warning: conflicting types for 'moveSquare'
+ void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+      ^~~~~~~~~~
+../src/display_demo.c:226:4: note: previous implicit declaration of 'moveSquare' was here
+    moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+    ^~~~~~~~~~
+../src/display_demo.c: In function 'moveSquare':
+../src/display_demo.c:684:7: warning: unused variable 'firstTime' [-Wunused-variable]
+   int firstTime = 1;
+       ^~~~~~~~~
+../src/display_demo.c:674:7: warning: unused variable 'reset' [-Wunused-variable]
+   int reset = 0;
+       ^~~~~
+../src/display_demo.c:670:6: warning: unused variable 'zero' [-Wunused-variable]
+  u32 zero = startPixelAddr;
+      ^~~~
+'Finished building: ../src/display_demo.c'
+' '
+'Building target: hdmi_out_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../hdmi_out_1_bsp/ps7_cortexa9_0/lib -o "hdmi_out_1.elf"  ./src/timer_ps/timer_ps.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/display_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hdmi_out_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size hdmi_out_1.elf  |tee "hdmi_out_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109880	   2720	24909440	25022040	17dce58	hdmi_out_1.elf
+'Finished building: hdmi_out_1.elf.size'
+' '
+13:57:09 **** Incremental Build of configuration Debug for project hdmi_out_1 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '

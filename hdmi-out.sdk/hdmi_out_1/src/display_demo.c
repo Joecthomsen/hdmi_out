@@ -221,6 +221,11 @@ void DemoRun()
 			drawSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
 			break;
 
+		case '9' :
+			TimerDelay(500000);
+			moveSquare(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+			break;
+
 		case 'q':
 			break;
 		default :
@@ -252,6 +257,7 @@ void DemoPrintMenu()
 	xil_printf("6 - Invert Current Frame colors seamlessly\n\r");
 	xil_printf("7 - GOAT test\n\r");
 	xil_printf("8 - GOAT square\n\r");
+	xil_printf("9 - move square\n\r");
 	xil_printf("q - Quit\n\r");
 	xil_printf("\n\r");
 	xil_printf("\n\r");
@@ -373,7 +379,7 @@ void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 str
 
 void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
 
-	u32 iPixelAddr = 0; //start address
+	//u32 iPixelAddr = 0; //start address
 
 	double fRed, fBlue, fGreen;
 
@@ -397,10 +403,6 @@ void DemoGoatTest(u8 *frame, u32 width, u32 height, u32 stride){
 			frame[i + 1] = wGreen;
 			frame[i + 2] = wRed;
 
-			//frame[iPixelAddr] = wBlue;
-			//frame[iPixelAddr + 1] = wGreen;
-			//frame[iPixelAddr + 2] = wRed;
-			//iPixelAddr +=4;
 		}
 	Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
 
@@ -635,26 +637,231 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 void drawSquare(u8 *frame, u32 width, u32 height, u32 stride){
 
 	//u32 iPixelAddr = (width * 2)/1.5 *height * 2; //start address
-	u32 iPixelAddr = 0;
-		u8 Red, Blue, Green;
+	u32 startPixelAddr = stride*(height) - (20*stride) + width;
 
-		Red = 254;
-		Blue = 0;
-		Green = 0;
+		double red, blue, green;
 
-		for(int j = 0 ; j < 12 ; j++)
+		red = 254;
+		blue = 0;
+		green = 0;
+
+		u8 wRed = (red >= 256.0) ? 255 : ((u8) red);
+		u8 wBlue = (blue >= 256.0) ? 255 : ((u8) blue);
+		u8 wGreen = (green >= 256.0) ? 255 : ((u8) green);
+
+		for(int i = 0 ; i < 20 ; i++)
 		{
-			for(int i = 0 ; i < width ; i+=4)
+			for(int j = 0 ; j < width/8  ; j+=4)
 			{
-				frame[i] = Blue;
-				frame[i + 1] = Green;
-				frame[i + 2] = Red;
-				//iPixelAddr += 4;
+				frame[startPixelAddr + j] = wBlue;
+				frame[startPixelAddr + j + 1] = wGreen;
+				frame[startPixelAddr + j + 2] = wRed;
 			}
-			iPixelAddr += stride;
+			startPixelAddr += stride;
 		}
-
+		Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
 }
+
+void moveSquare(u8 *frame, u32 width, u32 height, u32 stride){
+
+	//speed = 16;
+
+	u32 startPixelAddr = stride*(height) - (20*stride) + width;
+	u32 zero = startPixelAddr;
+
+		double red, blue, green;
+
+		int reset = 0;
+
+		red = 254;
+		blue = 0;
+		green = 0;
+
+		u8 wRed = (red >= 256.0) ? 255 : ((u8) red);
+		u8 wBlue = (blue >= 256.0) ? 255 : ((u8) blue);
+		u8 wGreen = (green >= 256.0) ? 255 : ((u8) green);
+
+		int firstTime = 1;
+
+			char userInput = 0;
+
+			u32 oldAddr = startPixelAddr;
+
+			for(int i = 0 ; i < 20 ; i++)
+			{
+				for(int j = 0 ; j < width/8  ; j+=4)
+				{
+					frame[startPixelAddr + j] = wBlue;
+					frame[startPixelAddr + j + 1] = wGreen;
+					frame[startPixelAddr + j + 2] = wRed;
+				}
+				startPixelAddr += stride;
+			}
+			Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+
+		while(1)
+		{
+			/* Wait for data on UART */
+				while (!XUartPs_IsReceiveData(UART_BASEADDR))
+				{}
+
+			userInput = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+
+			switch(userInput)
+			{
+
+			case 'w' :
+
+			startPixelAddr = oldAddr;
+				wRed = 0;
+
+				for(int i = 0 ; i < 20 ; i++)
+				{
+					for(int j = 0 ; j < width/8  ; j+=4)
+					{
+						frame[startPixelAddr + j] = wBlue;
+						frame[startPixelAddr + j + 1] = wGreen;
+						frame[startPixelAddr + j + 2] = wRed;
+					}
+
+				startPixelAddr += stride;
+				}
+				Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+
+				startPixelAddr += 4 - (30*stride);
+				oldAddr = startPixelAddr;
+				wRed = 254;
+				for(int i = 0 ; i < 20 ; i++)
+				{
+					for(int j = 0 ; j < width/8  ; j+=4)
+					{
+						frame[startPixelAddr + j] = wBlue;
+						frame[startPixelAddr + j + 1] = wGreen;
+						frame[startPixelAddr + j + 2] = wRed;
+					}
+
+				startPixelAddr += stride;
+				}
+				Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+
+				break;
+
+			case 's' :
+
+				startPixelAddr = oldAddr;
+					wRed = 0;
+
+					for(int i = 0 ; i < 20 ; i++)
+					{
+						for(int j = 0 ; j < width/8  ; j+=4)
+						{
+							frame[startPixelAddr + j] = wBlue;
+							frame[startPixelAddr + j + 1] = wGreen;
+							frame[startPixelAddr + j + 2] = wRed;
+						}
+
+					startPixelAddr += stride;
+					}
+					Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+
+					startPixelAddr += 4 + (10*stride);
+					oldAddr = startPixelAddr;
+					wRed = 254;
+					for(int i = 0 ; i < 20 ; i++)
+					{
+						for(int j = 0 ; j < width/8  ; j+=4)
+						{
+							frame[startPixelAddr + j] = wBlue;
+							frame[startPixelAddr + j + 1] = wGreen;
+							frame[startPixelAddr + j + 2] = wRed;
+						}
+
+					startPixelAddr += stride;
+					}
+					Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+
+					break;
+
+			case 'd' :
+
+				startPixelAddr = oldAddr;
+				wRed = 0;
+				for(int i = 0 ; i < 20 ; i++)
+				{
+					for(int j = 0 ; j < width/8  ; j+=4)
+					{
+						frame[startPixelAddr + j] = wBlue;
+						frame[startPixelAddr + j + 1] = wGreen;
+						frame[startPixelAddr + j + 2] = wRed;
+					}
+
+				startPixelAddr += stride;
+				}
+				Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+
+
+				startPixelAddr += 16 - (20*stride);
+				oldAddr = startPixelAddr;
+				wRed = 254;
+				for(int i = 0 ; i < 20 ; i++)
+				{
+					for(int j = 0 ; j < width/8  ; j+=4)
+					{
+						frame[startPixelAddr + j] = wBlue;
+						frame[startPixelAddr + j + 1] = wGreen;
+						frame[startPixelAddr + j + 2] = wRed;
+					}
+
+				startPixelAddr += stride;
+				}
+				Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+
+				break;
+
+			case 'a' :
+
+				startPixelAddr = oldAddr;
+
+				wRed = 0;
+
+				for(int i = 0 ; i < 20 ; i++)
+				{
+					for(int j = 0 ; j < width/8  ; j+=4)
+					{
+						frame[startPixelAddr + j] = wBlue;
+						frame[startPixelAddr + j + 1] = wGreen;
+						frame[startPixelAddr + j + 2] = wRed;
+					}
+
+				startPixelAddr += stride;
+				}
+				Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+
+
+				startPixelAddr = (startPixelAddr - 16) - (20*stride);
+				oldAddr = startPixelAddr;
+
+				wRed = 254;
+
+					for(int i = 0 ; i < 20 ; i++)
+					{
+						for(int j = 0 ; j < width/8  ; j+=4)
+						{
+							frame[startPixelAddr + j] = wBlue;
+							frame[startPixelAddr + j + 1] = wGreen;
+							frame[startPixelAddr + j + 2] = wRed;
+						}
+
+					startPixelAddr += stride;
+					}
+					Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+				break;
+
+			}
+		}
+}
+
+
 
 
 
